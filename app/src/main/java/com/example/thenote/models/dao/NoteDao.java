@@ -24,5 +24,8 @@ public interface NoteDao {
 
     @Query("SELECT * FROM notes ORDER BY id DESC")
     LiveData<List<Note>> getAllNotes();
+
+    @Query("SELECT * FROM notes WHERE title LIKE '%' || :searchText || '%' OR description LIKE '%' || :searchText || '%' ORDER BY id DESC")
+    LiveData<List<Note>> searchNotes(String searchText);
 }
 

@@ -25,18 +25,17 @@ public class NoteRepository {
     }
 
     public void insert(Note note) {
-        // Führe die Einfügeoperation in der Datenbank aus (z. B. über noteDao)
-        // Hier solltest du die asynchrone Einfügeoperation verwenden, um das Haupt-Thread-Blocking zu vermeiden
-        // Beispiel: noteDao.insert(note);
+noteDao.insert(note);
     }
 
     public void update(Note note) {
-        // Führe die Aktualisierungsoperation in der Datenbank aus (z. B. über noteDao)
-        // Beispiel: noteDao.update(note);
+noteDao.update(note);
     }
 
     public void delete(Note note) {
-        // Führe die Löschoperation in der Datenbank aus (z. B. über noteDao)
-        // Beispiel: noteDao.delete(note);
+noteDao.delete(note);
+    }
+    public void searchNotes(String searchText) {
+        allNotes = noteDao.searchNotes(searchText);
     }
 }
