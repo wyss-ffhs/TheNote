@@ -10,7 +10,7 @@ import java.util.List;
 
 public class NoteEditorViewModel extends ViewModel {
 
-    private MutableLiveData<List<NoteImage>> mImagesLiveData = new MutableLiveData<>();
+    private final MutableLiveData<List<NoteImage>> mImagesLiveData = new MutableLiveData<>();
 
     public MutableLiveData<List<NoteImage>> getImagesLiveData() {
         return mImagesLiveData;

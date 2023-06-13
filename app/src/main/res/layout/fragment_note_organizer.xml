@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- Hier können andere Views hinzugefügt werden, z.B. eine Toolbar -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFolders"

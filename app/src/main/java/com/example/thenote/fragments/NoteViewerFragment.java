@@ -73,7 +73,6 @@ public class NoteViewerFragment extends Fragment implements  NoteAdapter.NoteCli
     }
     @Override
     public void onNoteClick(Note note) {
-        // Aktion ausführen, wenn eine Notiz angeklickt wird
         Toast.makeText(requireContext(), "Notiz geklickt: " + note.getTitle(), Toast.LENGTH_SHORT).show();
     }
 

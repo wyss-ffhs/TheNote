@@ -10,8 +10,8 @@ import java.util.List;
 
 public class NoteOrganizerViewModel extends ViewModel {
 
-    private NoteRepository mNoteRepository;
-    private LiveData<List<Note>> mNotes;
+    private final NoteRepository mNoteRepository;
+    private final LiveData<List<Note>> mNotes;
 
     public NoteOrganizerViewModel(NoteRepository noteRepository) {
         mNoteRepository = noteRepository;

@@ -51,7 +51,7 @@ public class NoteOrganizerAdapter extends RecyclerView.Adapter<NoteOrganizerAdap
 
     public class FolderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView mFolderName;
+        private final TextView mFolderName;
 
         public FolderViewHolder(@NonNull View itemView) {
             super(itemView);

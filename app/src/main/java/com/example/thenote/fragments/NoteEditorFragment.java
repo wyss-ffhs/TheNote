@@ -29,10 +29,6 @@ import java.util.List;
  */
 public class NoteEditorFragment extends Fragment {
 
-    private NoteEditorViewModel mViewModel;
-    private EditText mNoteText;
-    private Button mCameraButton;
-    private ImageView mImageView;
     private NoteImageAdapter mImageAdapter;
 
     public static NoteEditorFragment newInstance() {
@@ -43,9 +39,9 @@ public class NoteEditorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_editor, container, false);
-        mNoteText = view.findViewById(R.id.editTextNote);
-        mCameraButton = view.findViewById(R.id.buttonCamera);
-        mImageView = view.findViewById(R.id.imageView);
+        EditText mNoteText = view.findViewById(R.id.editTextNote);
+        Button mCameraButton = view.findViewById(R.id.buttonCamera);
+        ImageView mImageView = view.findViewById(R.id.imageView);
 
         mCameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +55,7 @@ public class NoteEditorFragment extends Fragment {
         mImageAdapter = new NoteImageAdapter(requireContext());
         recyclerView.setAdapter(mImageAdapter);
 
-        mViewModel = new ViewModelProvider(requireActivity()).get(NoteEditorViewModel.class);
+        NoteEditorViewModel mViewModel = new ViewModelProvider(requireActivity()).get(NoteEditorViewModel.class);
         mViewModel.getImagesLiveData().observe(getViewLifecycleOwner(), new Observer<List<NoteImage>>() {
             @Override
             public void onChanged(List<NoteImage> noteImages) {

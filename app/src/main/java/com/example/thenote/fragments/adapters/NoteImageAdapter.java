@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.thenote.R;
@@ -19,7 +18,7 @@ import java.util.List;
 public class NoteImageAdapter extends RecyclerView.Adapter<NoteImageAdapter.ImageViewHolder> {
 
     private List<NoteImage> mImages;
-    private Context mContext;
+    private final Context mContext;
 
     public NoteImageAdapter(Context context) {
         mContext = context;
@@ -51,13 +50,11 @@ public class NoteImageAdapter extends RecyclerView.Adapter<NoteImageAdapter.Imag
         return mImages.size();
     }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder {
-
-        private ImageView mImageView;
+    public static class ImageViewHolder extends RecyclerView.ViewHolder {
 
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
-            mImageView = itemView.findViewById(R.id.image_view);
+            ImageView mImageView = itemView.findViewById(R.id.image_view);
         }
 
         public void bind(NoteImage image) {

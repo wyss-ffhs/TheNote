@@ -11,11 +11,12 @@
         android:hint="Search notes"
         android:imeOptions="actionSearch"
         android:inputType="text"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:autofillHints="" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewNotes"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1" />
 

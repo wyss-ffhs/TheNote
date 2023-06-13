@@ -1,14 +1,6 @@
 <resources>
     <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
-    </string-array>
 
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
-    </string-array>
     <string-array name="language_options">
         <item>English</item>
         <item>German</item>
@@ -25,37 +17,36 @@
         <item>Yellow</item>
         <item>Blue</item>
         <item>Green</item>
-        <!-- Weitere Farboptionen hier -->
     </string-array>
 
     <string-array name="note_color_values">
         <item>yellow</item>
         <item>blue</item>
         <item>green</item>
-        <!-- Weitere Farbwerte hier -->
+
     </string-array>
     <string-array name="font_size_options">
         <item>Small</item>
         <item>Medium</item>
         <item>Large</item>
-        <!-- Weitere Optionen hier -->
+
     </string-array>
     <string-array name="font_size_values">
         <item>small</item>
         <item>medium</item>
         <item>large</item>
-        <!-- Weitere Werte hier -->
+
     </string-array>
     <string-array name="note_sort_options">
         <item>Date</item>
         <item>Title</item>
         <item>Priority</item>
-        <!-- Weitere Optionen hier -->
+
     </string-array>
     <string-array name="note_sort_values">
         <item>date</item>
         <item>title</item>
         <item>priority</item>
-        <!-- Weitere Werte hier -->
+
     </string-array>
 </resources>

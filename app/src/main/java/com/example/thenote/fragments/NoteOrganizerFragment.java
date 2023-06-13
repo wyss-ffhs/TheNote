@@ -1,25 +1,20 @@
 package com.example.thenote.fragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.thenote.R;
 import com.example.thenote.fragments.adapters.NoteOrganizerAdapter;
 import com.example.thenote.fragments.viewmodels.NoteOrganizerViewModel;
-import com.example.thenote.models.Note;
-
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +23,6 @@ import java.util.List;
  */
 public class NoteOrganizerFragment extends Fragment {
 
-    private NoteOrganizerViewModel mViewModel;
     private RecyclerView mRecyclerView;
     private NoteOrganizerAdapter mAdapter;
 
@@ -53,12 +47,7 @@ public class NoteOrganizerFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         mRecyclerView.setAdapter(mAdapter);
 
-        mViewModel = new ViewModelProvider(requireActivity()).get(NoteOrganizerViewModel.class);
-        mViewModel.getNotes().observe(getViewLifecycleOwner(), new Observer<List<Note>>() {
-            @Override
-            public void onChanged(List<Note> notes) {
-                mAdapter.setNotes(notes);
-            }
-        });
+        NoteOrganizerViewModel mViewModel = new ViewModelProvider(requireActivity()).get(NoteOrganizerViewModel.class);
+        mViewModel.getNotes().observe(getViewLifecycleOwner(), notes -> mAdapter.setNotes(notes));
     }
 }
