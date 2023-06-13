@@ -39,4 +39,16 @@ public class NoteRepository {
     public void searchNotes(String searchText) {
         allNotes = noteDao.searchNotes(searchText);
     }
+
+    public void moveNoteToFolder(Note note, String folder) {
+    }
+
+    public void importNotes() {
+    }
+
+    public void exportNotes() {
+    }
+
+    public void archiveNotes() {
+    }
 }
