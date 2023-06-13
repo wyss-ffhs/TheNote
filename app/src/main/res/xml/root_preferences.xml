@@ -1,0 +1,73 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="Allgemein">
+        <SwitchPreference
+            app:key="pref_key_enable_notifications"
+            app:summary="Aktiviere, um Benachrichtigungen für neue Notizen zu erhalten"
+            app:title="Benachrichtigungen aktivieren" />
+
+    <SwitchPreference
+        app:key="pref_key_dark_mode"
+        app:title="Dark Mode"
+        app:summary="Enable dark mode"
+        app:defaultValue="false" />
+
+    <ListPreference
+        app:key="pref_key_language"
+        app:title="Language"
+        app:summary="Select your preferred language"
+        app:entries="@array/language_options"
+        app:entryValues="@array/language_values"
+        app:defaultValue="en" />
+
+    <EditTextPreference
+        app:key="pref_key_username"
+        app:title="Username"
+        app:summary="Enter your username"
+        app:defaultValue="" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Notizen">
+    <ListPreference
+        app:key="pref_key_font_size"
+        app:title="Font Size"
+        app:summary="Select the font size"
+        app:entries="@array/font_size_options"
+        app:entryValues="@array/font_size_values"
+        app:defaultValue="medium" />
+
+        <ListPreference
+            app:key="pref_key_default_note_color"
+            app:title="Default Note Color"
+            app:summary="Select the default color for new notes"
+            app:entries="@array/note_color_options"
+            app:entryValues="@array/note_color_values"
+            app:defaultValue="yellow" />
+
+
+        <SwitchPreference
+            app:key="pref_key_auto_save_notes"
+            app:title="Auto Save Notes"
+            app:summary="Enable/disable automatic saving of notes"
+            app:defaultValue="true" />
+
+        <ListPreference
+            app:key="pref_key_note_sort_order"
+            app:title="Note Sort Order"
+            app:summary="Select the sort order for notes"
+            app:entries="@array/note_sort_options"
+            app:entryValues="@array/note_sort_values"
+            app:defaultValue="date" />
+
+        <SwitchPreference
+            app:key="pref_key_show_note_timestamp"
+            app:title="Show Note Timestamp"
+            app:summary="Enable/disable displaying timestamps on notes"
+            app:defaultValue="true" />
+
+        <SwitchPreference
+            app:key="pref_key_enable_note_reminders"
+            app:title="Enable Note Reminders"
+            app:summary="Enable/disable setting reminders for notes"
+            app:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

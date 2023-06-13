@@ -11,7 +11,7 @@ import com.example.thenote.models.dao.NoteDao;
 import java.util.List;
 
 public class NoteRepository {
-    private NoteDao noteDao;
+    private final NoteDao noteDao;
     private LiveData<List<Note>> allNotes;
 
     public NoteRepository(Application application) {
@@ -25,16 +25,17 @@ public class NoteRepository {
     }
 
     public void insert(Note note) {
-noteDao.insert(note);
+        noteDao.insert(note);
     }
 
     public void update(Note note) {
-noteDao.update(note);
+        noteDao.update(note);
     }
 
     public void delete(Note note) {
-noteDao.delete(note);
+        noteDao.delete(note);
     }
+
     public void searchNotes(String searchText) {
         allNotes = noteDao.searchNotes(searchText);
     }

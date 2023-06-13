@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.thenote.R;
 import com.example.thenote.fragments.adapters.NoteAdapter;
@@ -24,7 +25,7 @@ import com.example.thenote.models.Note;
 
 import java.util.List;
 
-public class NoteViewerFragment extends Fragment {
+public class NoteViewerFragment extends Fragment implements  NoteAdapter.NoteClickListener{
 
     private NoteViewModel mNoteViewModel;
     private NoteAdapter mNoteAdapter;
@@ -69,6 +70,11 @@ public class NoteViewerFragment extends Fragment {
             }
             return false;
         });
+    }
+    @Override
+    public void onNoteClick(Note note) {
+        // Aktion ausführen, wenn eine Notiz angeklickt wird
+        Toast.makeText(requireContext(), "Notiz geklickt: " + note.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
 }

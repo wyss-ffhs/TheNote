@@ -52,4 +52,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             textViewDescription = itemView.findViewById(R.id.textViewDescription);
         }
     }
+    public interface NoteClickListener {
+        void onNoteClick(Note note);
+    }
 }
