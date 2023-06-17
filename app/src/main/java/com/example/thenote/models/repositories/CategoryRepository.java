@@ -1,12 +1,10 @@
 package com.example.thenote.models.repositories;
 
 import android.app.Application;
-import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
 import com.example.thenote.database.CategoryDatabase;
-import com.example.thenote.database.NoteDatabase;
 import com.example.thenote.models.Category;
 import com.example.thenote.models.dao.CategoryDao;
 
@@ -14,12 +12,12 @@ import java.util.List;
 
 public class CategoryRepository {
 
-    private CategoryDao categoryDao;
-    private LiveData<List<Category>> allCategories;
+    private final CategoryDao categoryDao;
+    private final LiveData<List<Category>> allCategories;
 
     public CategoryRepository(Application application) {
         CategoryDatabase database = CategoryDatabase.getInstance(application);
-         categoryDao = database.categoryDao();
+        categoryDao = database.categoryDao();
         allCategories = categoryDao.getAllCategories();
     }
 

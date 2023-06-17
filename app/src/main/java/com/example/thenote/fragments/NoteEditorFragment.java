@@ -1,13 +1,6 @@
 package com.example.thenote.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.thenote.R;
 import com.example.thenote.fragments.adapters.NoteImageAdapter;
 import com.example.thenote.fragments.viewmodels.NoteEditorViewModel;
-import com.example.thenote.models.NoteImage;
-
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,11 +38,8 @@ public class NoteEditorFragment extends Fragment {
         Button mCameraButton = view.findViewById(R.id.buttonCamera);
         ImageView mImageView = view.findViewById(R.id.imageView);
 
-        mCameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Implement the logic for capturing a visual note using the camera
-            }
+        mCameraButton.setOnClickListener(v -> {
+            // Implement the logic for capturing a visual note using the camera
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewImages);
@@ -56,12 +48,7 @@ public class NoteEditorFragment extends Fragment {
         recyclerView.setAdapter(mImageAdapter);
 
         NoteEditorViewModel mViewModel = new ViewModelProvider(requireActivity()).get(NoteEditorViewModel.class);
-        mViewModel.getImagesLiveData().observe(getViewLifecycleOwner(), new Observer<List<NoteImage>>() {
-            @Override
-            public void onChanged(List<NoteImage> noteImages) {
-                mImageAdapter.setImages(noteImages);
-            }
-        });
+        mViewModel.getImagesLiveData().observe(getViewLifecycleOwner(), noteImages -> mImageAdapter.setImages(noteImages));
 
         return view;
     }

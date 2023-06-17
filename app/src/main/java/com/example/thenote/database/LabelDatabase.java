@@ -14,8 +14,6 @@ public abstract class LabelDatabase extends RoomDatabase {
 
     private static LabelDatabase instance;
 
-    public abstract LabelDao labelDao();
-
     public static synchronized LabelDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
@@ -25,4 +23,6 @@ public abstract class LabelDatabase extends RoomDatabase {
         }
         return instance;
     }
+
+    public abstract LabelDao labelDao();
 }

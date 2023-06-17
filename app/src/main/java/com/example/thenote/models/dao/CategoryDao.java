@@ -24,12 +24,14 @@ public interface CategoryDao {
 
     @Query("SELECT * FROM categories")
     LiveData<List<Category>> getAllCategories();
+
     @Insert
     void insertCategory(Category category);
-@Update
+
+    @Update
     void updateCategory(Category category);
-@Delete
+
+    @Delete
     void deleteCategory(Category category);
 
-    // Weitere Methoden hier
 }

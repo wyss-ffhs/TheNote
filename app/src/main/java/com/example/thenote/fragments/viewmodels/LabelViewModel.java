@@ -13,8 +13,8 @@ import java.util.List;
 
 public class LabelViewModel extends ViewModel {
 
-    private LabelRepository labelRepository;
-    private LiveData<List<Label>> allLabels;
+    private final LabelRepository labelRepository;
+    private final LiveData<List<Label>> allLabels;
 
     public LabelViewModel(Application application) {
         super((Closeable) application);

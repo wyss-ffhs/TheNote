@@ -12,17 +12,19 @@ import java.util.List;
 
 public class LabelRepository {
 
-    private LabelDao labelDao;
-    private LiveData<List<Label>> allLabels;
+    private final LabelDao labelDao;
+    private final LiveData<List<Label>> allLabels;
 
     public LabelRepository(Application application) {
         LabelDatabase database = LabelDatabase.getInstance(application);
         labelDao = database.labelDao();
         allLabels = labelDao.getAllLabels();
     }
+
     public LiveData<List<Label>> getAllLabels() {
         return allLabels;
     }
+
     public void insertLabel(Label label) {
         labelDao.insert(label);
     }

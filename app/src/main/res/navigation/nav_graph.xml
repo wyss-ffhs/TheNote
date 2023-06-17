@@ -10,16 +10,16 @@
         android:label="Note Viewer"
         tools:layout="@layout/fragment_note_viewer" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/noteEditorFragment"-->
-<!--        android:name="com.example.thenote.NoteEditorFragment"-->
-<!--        android:label="Note Editor"-->
-<!--        tools:layout="@layout/fragment_note_editor" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/noteEditorFragment"-->
+    <!--        android:name="com.example.thenote.NoteEditorFragment"-->
+    <!--        android:label="Note Editor"-->
+    <!--        tools:layout="@layout/fragment_note_editor" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/noteOrganizerFragment"-->
-<!--        android:name="com.example.thenote.NoteOrganizerFragment"-->
-<!--        android:label="Note Organizer"-->
-<!--        tools:layout="@layout/fragment_note_organizer" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/noteOrganizerFragment"-->
+    <!--        android:name="com.example.thenote.NoteOrganizerFragment"-->
+    <!--        android:label="Note Organizer"-->
+    <!--        tools:layout="@layout/fragment_note_organizer" />-->
 
 </navigation>

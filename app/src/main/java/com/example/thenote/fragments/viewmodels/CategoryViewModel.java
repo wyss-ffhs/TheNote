@@ -14,8 +14,8 @@ import java.util.List;
 
 public class CategoryViewModel extends ViewModel {
 
-    private CategoryRepository categoryRepository;
-    private LiveData<List<Category>> allCategories;
+    private final CategoryRepository categoryRepository;
+    private final LiveData<List<Category>> allCategories;
 
     public CategoryViewModel(@NonNull Application application) {
         super((Closeable) application);

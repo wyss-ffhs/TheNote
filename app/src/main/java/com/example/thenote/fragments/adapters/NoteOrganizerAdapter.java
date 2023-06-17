@@ -49,6 +49,10 @@ public class NoteOrganizerAdapter extends RecyclerView.Adapter<NoteOrganizerAdap
     public void setNotes(List<Note> notes) {
     }
 
+    public interface OnFolderClickListener {
+        void onFolderClick(String folder);
+    }
+
     public class FolderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView mFolderName;
@@ -71,10 +75,6 @@ public class NoteOrganizerAdapter extends RecyclerView.Adapter<NoteOrganizerAdap
                 mClickListener.onFolderClick(folder);
             }
         }
-    }
-
-    public interface OnFolderClickListener {
-        void onFolderClick(String folder);
     }
 }
 

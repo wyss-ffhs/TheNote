@@ -42,6 +42,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         notifyDataSetChanged();
     }
 
+    public interface NoteClickListener {
+        void onNoteClick(Note note);
+    }
+
     static class NoteViewHolder extends RecyclerView.ViewHolder {
         private final TextView textViewTitle;
         private final TextView textViewDescription;
@@ -51,8 +55,5 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewDescription = itemView.findViewById(R.id.textViewDescription);
         }
-    }
-    public interface NoteClickListener {
-        void onNoteClick(Note note);
     }
 }

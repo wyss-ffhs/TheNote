@@ -1,16 +1,6 @@
 package com.example.thenote.fragments;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +8,19 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.thenote.R;
 import com.example.thenote.fragments.adapters.NoteAdapter;
 import com.example.thenote.fragments.viewmodels.NoteViewModel;
 import com.example.thenote.models.Note;
 
-import java.util.List;
-
-public class NoteViewerFragment extends Fragment implements  NoteAdapter.NoteClickListener{
+public class NoteViewerFragment extends Fragment implements NoteAdapter.NoteClickListener {
 
     private NoteViewModel mNoteViewModel;
     private NoteAdapter mNoteAdapter;
@@ -48,12 +43,7 @@ public class NoteViewerFragment extends Fragment implements  NoteAdapter.NoteCli
         recyclerView.setAdapter(mNoteAdapter);
 
         mNoteViewModel = new ViewModelProvider(this).get(NoteViewModel.class);
-        mNoteViewModel.getAllNotes().observe(getViewLifecycleOwner(), new Observer<List<Note>>() {
-            @Override
-            public void onChanged(List<Note> notes) {
-                mNoteAdapter.setNotes(notes);
-            }
-        });
+        mNoteViewModel.getAllNotes().observe(getViewLifecycleOwner(), notes -> mNoteAdapter.setNotes(notes));
 
         return view;
     }
@@ -71,6 +61,7 @@ public class NoteViewerFragment extends Fragment implements  NoteAdapter.NoteCli
             return false;
         });
     }
+
     @Override
     public void onNoteClick(Note note) {
         Toast.makeText(requireContext(), "Notiz geklickt: " + note.getTitle(), Toast.LENGTH_SHORT).show();

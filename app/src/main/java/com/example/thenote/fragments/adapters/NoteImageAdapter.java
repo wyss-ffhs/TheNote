@@ -17,8 +17,8 @@ import java.util.List;
 
 public class NoteImageAdapter extends RecyclerView.Adapter<NoteImageAdapter.ImageViewHolder> {
 
-    private List<NoteImage> mImages;
     private final Context mContext;
+    private List<NoteImage> mImages;
 
     public NoteImageAdapter(Context context) {
         mContext = context;
@@ -36,7 +36,6 @@ public class NoteImageAdapter extends RecyclerView.Adapter<NoteImageAdapter.Imag
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_note_image, parent, false);
         return new ImageViewHolder(view);
     }
-
 
 
     @Override

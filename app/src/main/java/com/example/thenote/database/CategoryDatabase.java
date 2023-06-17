@@ -13,8 +13,6 @@ import com.example.thenote.models.dao.CategoryDao;
 public abstract class CategoryDatabase extends RoomDatabase {
     private static CategoryDatabase instance;
 
-    public abstract CategoryDao categoryDao();
-
     public static synchronized CategoryDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
@@ -24,4 +22,6 @@ public abstract class CategoryDatabase extends RoomDatabase {
         }
         return instance;
     }
+
+    public abstract CategoryDao categoryDao();
 }
