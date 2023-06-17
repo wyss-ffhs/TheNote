@@ -19,7 +19,7 @@ public class CategoryRepository {
 
     public CategoryRepository(Application application) {
         CategoryDatabase database = CategoryDatabase.getInstance(application);
-        CategoryDao categoryDao = database.categoryDao();
+         categoryDao = database.categoryDao();
         allCategories = categoryDao.getAllCategories();
     }
 
@@ -28,56 +28,15 @@ public class CategoryRepository {
     }
 
     public void insertCategory(Category category) {
-        new InsertCategoryAsyncTask(categoryDao).execute(category);
+        categoryDao.insertCategory(category);
     }
 
     public void updateCategory(Category category) {
-        new UpdateCategoryAsyncTask(categoryDao).execute(category);
+        categoryDao.update(category);
     }
 
     public void deleteCategory(Category category) {
-        new DeleteCategoryAsyncTask(categoryDao).execute(category);
+        categoryDao.delete(category);
     }
 
-    private static class InsertCategoryAsyncTask extends AsyncTask<Category, Void, Void> {
-        private CategoryDao categoryDao;
-
-        private InsertCategoryAsyncTask(CategoryDao categoryDao) {
-            this.categoryDao = categoryDao;
-        }
-
-        @Override
-        protected Void doInBackground(Category... categories) {
-            categoryDao.insertCategory(categories[0]);
-            return null;
-        }
-    }
-
-    private static class UpdateCategoryAsyncTask extends AsyncTask<Category, Void, Void> {
-        private CategoryDao categoryDao;
-
-        private UpdateCategoryAsyncTask(CategoryDao categoryDao) {
-            this.categoryDao = categoryDao;
-        }
-
-        @Override
-        protected Void doInBackground(Category... categories) {
-            categoryDao.updateCategory(categories[0]);
-            return null;
-        }
-    }
-
-    private static class DeleteCategoryAsyncTask extends AsyncTask<Category, Void, Void> {
-        private CategoryDao categoryDao;
-
-        private DeleteCategoryAsyncTask(CategoryDao categoryDao) {
-            this.categoryDao = categoryDao;
-        }
-
-        @Override
-        protected Void doInBackground(Category... categories) {
-            categoryDao.deleteCategory(categories[0]);
-            return null;
-        }
-    }
 }

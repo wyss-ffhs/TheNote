@@ -24,15 +24,15 @@ public class NoteRepository {
         return allNotes;
     }
 
-    public void insert(Note note) {
+    public void insertNote(Note note) {
         noteDao.insert(note);
     }
 
-    public void update(Note note) {
+    public void updateNote(Note note) {
         noteDao.update(note);
     }
 
-    public void delete(Note note) {
+    public void deleteNote(Note note) {
         noteDao.delete(note);
     }
 
