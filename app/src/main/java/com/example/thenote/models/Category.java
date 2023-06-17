@@ -7,9 +7,25 @@ import androidx.room.PrimaryKey;
 public class Category {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String name;
+    private String categoryName;
 
-    // Konstruktor, Getter und Setter hier
+    public Category(String categoryName) {
+        this.categoryName = categoryName;
+    }
 
-    // Weitere Methoden hier
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
 }

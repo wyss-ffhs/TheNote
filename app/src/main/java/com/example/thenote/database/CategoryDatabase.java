@@ -1,29 +1,27 @@
 package com.example.thenote.database;
 
 import android.content.Context;
+
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.thenote.models.Note;
+import com.example.thenote.models.Category;
 import com.example.thenote.models.dao.CategoryDao;
-import com.example.thenote.models.dao.NoteDao;
 
-@Database(entities = {Note.class}, version = 1)
-public abstract class NoteDatabase extends RoomDatabase {
-    private static NoteDatabase instance;
+@Database(entities = {Category.class}, version = 1, exportSchema = false)
+public abstract class CategoryDatabase extends RoomDatabase {
+    private static CategoryDatabase instance;
 
-    public abstract NoteDao noteDao();
+    public abstract CategoryDao categoryDao();
 
-    public static synchronized NoteDatabase getInstance(Context context) {
+    public static synchronized CategoryDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
-                            NoteDatabase.class, "note_database")
+                            CategoryDatabase.class, "category_database")
                     .fallbackToDestructiveMigration()
                     .build();
         }
         return instance;
     }
-
 }
-
