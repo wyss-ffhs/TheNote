@@ -5,17 +5,17 @@
     android:orientation="horizontal">
 
     <EditText
-        android:id="@+id/editTextSearch"
+        android:id="@+id/editText_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
-        android:hint="Search notes"
+        android:hint="@string/editText_search_hint"
         android:imeOptions="actionSearch"
         android:inputType="text"
         android:maxLines="1" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewNotes"
+        android:id="@+id/recyclerView_notes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1" />

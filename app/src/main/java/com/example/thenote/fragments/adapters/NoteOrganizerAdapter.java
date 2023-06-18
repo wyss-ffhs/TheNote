@@ -59,7 +59,7 @@ public class NoteOrganizerAdapter extends RecyclerView.Adapter<NoteOrganizerAdap
 
         public FolderViewHolder(@NonNull View itemView) {
             super(itemView);
-            mFolderName = itemView.findViewById(R.id.textFolderName);
+            mFolderName = itemView.findViewById(R.id.textFolder_name);
             itemView.setOnClickListener(this);
         }
 

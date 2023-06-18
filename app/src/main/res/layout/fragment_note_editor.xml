@@ -5,30 +5,30 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/editTextNote"
+        android:id="@+id/editText_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
-        android:hint="Enter your note"
+        android:hint="@string/editText_note_hint"
         android:inputType="textMultiLine" />
 
     <Button
-        android:id="@+id/buttonCamera"
+        android:id="@+id/button_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Camera" />
+        android:text="@string/button_camera_text" />
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/imageView_note_description"
         android:scaleType="centerCrop"
         android:src="@drawable/placeholder_image" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewImages"
+        android:id="@+id/recyclerView_images"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

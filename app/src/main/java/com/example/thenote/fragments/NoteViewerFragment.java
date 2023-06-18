@@ -36,8 +36,8 @@ public class NoteViewerFragment extends Fragment implements NoteAdapter.NoteClic
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_viewer, container, false);
 
-        mSearchEditText = view.findViewById(R.id.editTextSearch);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewNotes);
+        mSearchEditText = view.findViewById(R.id.editText_search);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_notes);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mNoteAdapter = new NoteAdapter();
         recyclerView.setAdapter(mNoteAdapter);

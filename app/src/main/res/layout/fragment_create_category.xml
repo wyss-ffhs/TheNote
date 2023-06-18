@@ -5,10 +5,10 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/editTextCategoryName"
+        android:id="@+id/editText_category_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Kategorienname" />
+        android:hint="@string/editText_category_name_hint" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,16 +16,16 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonCreate"
+            android:id="@+id/button_category_create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kategorie erstellen" />
+            android:text="@string/button_category_create_text" />
 
         <Button
-            android:id="@+id/buttonCancel"
+            android:id="@+id/button_category_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Abbrechen" />
+            android:text="@string/button_category_cancel_text"/>
 
     </LinearLayout>
 

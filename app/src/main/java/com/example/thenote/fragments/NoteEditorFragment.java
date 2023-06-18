@@ -34,15 +34,15 @@ public class NoteEditorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_editor, container, false);
-        EditText mNoteText = view.findViewById(R.id.editTextNote);
-        Button mCameraButton = view.findViewById(R.id.buttonCamera);
-        ImageView mImageView = view.findViewById(R.id.imageView);
+        EditText mNoteText = view.findViewById(R.id.editText_note);
+        Button mCameraButton = view.findViewById(R.id.button_camera);
+        ImageView mImageView = view.findViewById(R.id.imageView_note);
 
         mCameraButton.setOnClickListener(v -> {
             // Implement the logic for capturing a visual note using the camera
         });
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewImages);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_images);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
         mImageAdapter = new NoteImageAdapter(requireContext());
         recyclerView.setAdapter(mImageAdapter);

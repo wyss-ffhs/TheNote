@@ -35,9 +35,9 @@ public class CreateCategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_category, container, false);
 
-        editTextCategoryName = view.findViewById(R.id.editTextCategoryName);
-        Button buttonCreate = view.findViewById(R.id.buttonCreate);
-        Button buttonCancel = view.findViewById(R.id.buttonCancel);
+        editTextCategoryName = view.findViewById(R.id.editText_category_name);
+        Button buttonCreate = view.findViewById(R.id.button_category_create);
+        Button buttonCancel = view.findViewById(R.id.button_category_cancel);
 
         categoryViewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
 

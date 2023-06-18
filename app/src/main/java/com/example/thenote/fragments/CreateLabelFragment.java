@@ -35,8 +35,8 @@ public class CreateLabelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_label, container, false);
-        editTextLabelName = view.findViewById(R.id.editTextLabelName);
-        Button buttonSaveLabel = view.findViewById(R.id.buttonSaveLabel);
+        editTextLabelName = view.findViewById(R.id.editText_label_name);
+        Button buttonSaveLabel = view.findViewById(R.id.button_label_save);
 
         labelViewModel = new ViewModelProvider(requireActivity()).get(LabelViewModel.class);
 

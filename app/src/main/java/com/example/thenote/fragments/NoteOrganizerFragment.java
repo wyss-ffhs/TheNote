@@ -35,7 +35,7 @@ public class NoteOrganizerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_note_organizer, container, false);
-        mRecyclerView = view.findViewById(R.id.recyclerViewFolders);
+        mRecyclerView = view.findViewById(R.id.recyclerView_folders);
         return view;
     }
 
