@@ -1,16 +1,14 @@
 package com.example.thenote.fragments;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 
-import com.example.thenote.MainActivity;
 import com.example.thenote.R;
+import com.example.thenote.activities.MainActivity;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 
@@ -44,7 +42,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         });
 
 
-}
+    }
 
 
 }

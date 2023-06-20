@@ -8,7 +8,43 @@
         android:id="@+id/noteViewerFragment"
         android:name="com.example.thenote.fragments.NoteViewerFragment"
         android:label="Note Viewer"
-        tools:layout="@layout/fragment_note_viewer" />
+        tools:layout="@layout/fragment_note_viewer">
+        <action
+            android:id="@+id/action_noteViewerFragment_to_noteEditorFragment"
+            app:destination="@id/noteEditorFragment"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_noteViewerFragment_to_noteOrganizerFragment"
+            app:destination="@id/noteOrganizerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCategoryFragment"
+        android:name="com.example.thenote.fragments.CreateCategoryFragment"
+        android:label="CreateCategoryFragment" />
+    <fragment
+        android:id="@+id/createLabelFragment"
+        android:name="com.example.thenote.fragments.CreateLabelFragment"
+        android:label="CreateLabelFragment" />
+    <fragment
+        android:id="@+id/noteEditorFragment"
+        android:name="com.example.thenote.fragments.NoteEditorFragment"
+        android:label="NoteEditorFragment">
+        <action
+            android:id="@+id/action_noteEditorFragment_to_noteOrganizerFragment"
+            app:destination="@id/noteOrganizerFragment" />
+        <action
+            android:id="@+id/action_noteEditorFragment_to_noteViewerFragment"
+            app:destination="@id/noteViewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteOrganizerFragment"
+        android:name="com.example.thenote.fragments.NoteOrganizerFragment"
+        android:label="NoteOrganizerFragment">
+        <action
+            android:id="@+id/action_noteOrganizerFragment_to_noteViewerFragment"
+            app:destination="@id/noteViewerFragment" />
+    </fragment>
+
 
     <!--    <fragment-->
     <!--        android:id="@+id/noteEditorFragment"-->

@@ -9,7 +9,7 @@
             app:defaultValue="false"
             app:key="pref_key_dark_mode"
             app:summary="@string/dark_mode_summary"
-            app:title="@string/dark_mode_title"  />
+            app:title="@string/dark_mode_title" />
 
         <ListPreference
             app:defaultValue="en"

@@ -25,7 +25,7 @@
             android:id="@+id/button_category_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_category_cancel_text"/>
+            android:text="@string/button_category_cancel_text" />
 
     </LinearLayout>
 
