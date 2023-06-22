@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import androidx.preference.PreferenceManager;
 
@@ -31,19 +33,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //
         setContentView(R.layout.activity_main);
-        Button settingsButton = findViewById(R.id.button_settings);
-        settingsButton.setOnClickListener(v -> openSettings());
+        //Button settingsButton = findViewById(R.id.button_settings);
+        //settingsButton.setOnClickListener(v -> openSettings());
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         applyDarkMode();
         applyEnableNotifications();
+        //
+        // assigning ID of the toolbar to a variable
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // using toolbar as ActionBar
+        setSupportActionBar(toolbar);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.actionbar_menu, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
+        int id = item.getItemId();
+        if (id== android.R.id.home) {
             if (getParentActivityIntent() == null) {
                 Log.i(TAG, "You have forgotten to specify the parentActivityName in the AndroidManifest!");
                 onBackPressed();
@@ -52,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         }
+        if (id == R.id.action_settings) {
+            openSettings();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

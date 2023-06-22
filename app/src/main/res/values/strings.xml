@@ -35,4 +35,8 @@
     <string name="button_camera_text">Camera</string>
     <string name="editText_search_hint">Search Note</string>
     <string name="imageView_note_description">imageView_note</string>
+    <string name="button_editor_text">Editor</string>
+    <string name="button_viewer_text">Viewer</string>
+    <string name="button_organizer_text">Organizer</string>
+    <string name="action_settings">Settings</string>
 </resources>
