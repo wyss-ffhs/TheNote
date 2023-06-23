@@ -26,10 +26,6 @@ public class NoteEditorFragment extends Fragment {
 
     private NoteImageAdapter mImageAdapter;
 
-    public static NoteEditorFragment newInstance() {
-        return new NoteEditorFragment();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

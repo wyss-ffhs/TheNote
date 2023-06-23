@@ -11,11 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.thenote.R;
 import com.example.thenote.models.Note;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NoteOrganizerAdapter extends RecyclerView.Adapter<NoteOrganizerAdapter.FolderViewHolder> {
 
-    private List<String> mFolders;
+    private List<String> mFolders= new ArrayList<>();
     private OnFolderClickListener mClickListener;
 
     public NoteOrganizerAdapter(List<String> folders, OnFolderClickListener clickListener) {

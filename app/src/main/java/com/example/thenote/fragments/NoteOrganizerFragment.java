@@ -23,31 +23,23 @@ import com.example.thenote.fragments.viewmodels.NoteOrganizerViewModel;
  */
 public class NoteOrganizerFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
     private NoteOrganizerAdapter mAdapter;
 
-    public NoteOrganizerFragment() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_note_organizer, container, false);
-        mRecyclerView = view.findViewById(R.id.recyclerView_folders);
-        return view;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_folders);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         mAdapter = new NoteOrganizerAdapter();
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        mRecyclerView.setAdapter(mAdapter);
+        recyclerView.setAdapter(mAdapter);
 
         NoteOrganizerViewModel mViewModel = new ViewModelProvider(requireActivity()).get(NoteOrganizerViewModel.class);
         mViewModel.getNotes().observe(getViewLifecycleOwner(), notes -> mAdapter.setNotes(notes));
+
+        return view;
     }
+
 }
